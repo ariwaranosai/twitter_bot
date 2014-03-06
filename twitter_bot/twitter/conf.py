@@ -6,7 +6,7 @@ nks.sai
 配置运行环境
 """
 
-env = 'local'
+env = 'server'
 proxy = '127.0.0.1:8087'
 
 token_url = 'https://twitter.com/login'

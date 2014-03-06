@@ -15,10 +15,18 @@
 # limitations under the License.
 #
 import webapp2
+import twitter
+import time
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        now = time.ctime()
+        try:
+            twitter.sendMessage('@nksfreedom now is' + now)
+        except:
+            self.respone.write('fail')
+        
+        self.respone.write('success')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
