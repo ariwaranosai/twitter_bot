@@ -34,3 +34,4 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+twitter_bot/user_conf.py
