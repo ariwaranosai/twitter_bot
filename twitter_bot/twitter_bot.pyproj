@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4e310856-bde3-4590-ab6b-6441cea14860</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>twitter_bot.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,10 +22,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="bangumi.py" />
-    <Compile Include="conf.py" />
-    <Compile Include="login.py" />
+    <Compile Include="bangumi\bangumi.py" />
+    <Compile Include="handlers.py" />
+    <Compile Include="main.py" />
+    <Compile Include="twitter\conf.py" />
+    <Compile Include="twitter\login.py" />
+    <Compile Include="twitter\user_conf.py" />
+    <Compile Include="twitter\__init__.py" />
     <Compile Include="twitter_bot.py" />
+    <Compile Include="unittest.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bangumi\" />
+    <Folder Include="twitter\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
