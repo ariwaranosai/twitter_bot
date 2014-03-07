@@ -10,3 +10,8 @@ class TimerHandler(webapp2.RequestHandler):
         pass
     def post(self):
         pass
+
+
+class RefreshBList(webapp2.RequestHandler):
+    def get(self):
+        pass
