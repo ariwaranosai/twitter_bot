@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#
+#coding=utf-8
 # Copyright 2007 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +18,13 @@ import webapp2
 import twitter
 import time
 
+#测时间
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         now = time.ctime()
         try:
             twitter.sendMessage('@nksfreedom now is' + now)
-            #TODO 时差  新番
         except:
             self.response.out.write('fail')
         self.response.out.write('ok')
