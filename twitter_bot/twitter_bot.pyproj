@@ -23,13 +23,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="bangumi\bangumi.py" />
+    <Compile Include="bangumi\__init__.py" />
+    <Compile Include="dbcontroller.py" />
     <Compile Include="handlers.py" />
     <Compile Include="main.py" />
+    <Compile Include="models.py" />
     <Compile Include="twitter\conf.py" />
     <Compile Include="twitter\login.py" />
     <Compile Include="twitter\user_conf.py" />
     <Compile Include="twitter\__init__.py" />
-    <Compile Include="twitter_bot.py" />
     <Compile Include="unittest.py" />
   </ItemGroup>
   <ItemGroup>

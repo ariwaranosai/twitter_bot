@@ -43,7 +43,14 @@ def get_bangumi_b():
 #---------- tools -------------------
 
 def get_weekday():
-    i = datetime.datetime.now().weekday()
+    u"""
+    获取今天的星期数，考虑到时区的问题，要加上8个小时
+    """
+    now = datetime.datetime.now()
+    if now.hour + 8 > 23:
+        i = now.weekday() + 1
+    else:
+        i = now.weekday()
     i = (i + 1) % 7
     return i
 

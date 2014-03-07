@@ -26,8 +26,8 @@ class MainHandler(webapp2.RequestHandler):
         try:
             twitter.sendMessage('@nksfreedom now is' + now)
         except:
-            self.response.out.write('fail')
-        self.response.out.write('ok')
+            return self.response.out.write('fail')
+        return self.response.out.write('ok')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
