@@ -34,7 +34,10 @@ def get_bangumi_b():
             if i['new'] == True:
                 title = i['title']
                 bgmcount = i['bgmcount']
-                item = {'title':title, 'bgmcount':bgmcount}
+                update_time = i['lastupdate_at']
+                item = {'title':title,  \
+                        'bgmcount':bgmcount, \
+                        'update_time':update_time}
                 results.append(item)
     return results
 
