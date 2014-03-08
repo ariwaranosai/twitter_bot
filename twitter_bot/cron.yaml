@@ -1,0 +1,10 @@
+cron:
+- description: every 30 min
+  url: /whyisme
+  schedule: every 30 minutes
+
+- description: every day
+  url: /whyisme
+  schedule: every day 00:00
+  timezone: Asia/Shanghai
+
