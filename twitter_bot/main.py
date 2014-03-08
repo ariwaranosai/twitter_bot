@@ -15,18 +15,15 @@
 # limitations under the License.
 #
 import webapp2
-import twitter
+#import twitter
 import time
+import dbcontroller as dc
 
 #测时间
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        now = time.ctime()
-        try:
-            twitter.sendMessage('@nksfreedom now is' + now)
-        except:
-            return self.response.out.write('fail')
+        dc.refresh()
         return self.response.out.write('ok')
 
 app = webapp2.WSGIApplication([

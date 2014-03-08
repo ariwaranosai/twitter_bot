@@ -5,6 +5,7 @@
 
 import urllib,urllib2,json,time,StringIO,gzip
 import datetime
+import logging
 
 
 #---------get data ---------------------
@@ -20,8 +21,13 @@ def get_bangumi_b():
     """
     url = 'http://www.bilibili.tv/index/bangumi.json'
 
+    logging.log(logging.WARNING, "start to get b_list")
+
     f = urllib2.urlopen(url).read()
-    bangumi_str = tran2str(f)
+    try:
+        bangumi_str = tran2str(f)
+    except:
+        bangumi_str = f
     bangumi_obj = json.loads(bangumi_str)
     now = get_weekday()
 
@@ -29,15 +35,18 @@ def get_bangumi_b():
 
     for i in bangumi_obj:
         if i['weekday'] == now:
-            link = 'http://www.bilibili.tv/sp/' + \
-                    urllib.quote(i['title'].encode('utf-8'))
             if i['new'] == True:
+                link = 'http://www.bilibili.tv/sp/' + \
+                    urllib.quote(i['title'].encode('utf-8'))
                 title = i['title']
                 bgmcount = i['bgmcount']
                 update_time = i['lastupdate_at']
-                item = {'title':title,  \
-                        'bgmcount':bgmcount, \
-                        'update_time':update_time}
+                item = {
+                        'name':title,  \
+                        'index':bgmcount, \
+                        'update_time':update_time ,\
+                        'link':link
+                        }
                 results.append(item)
     return results
 
