@@ -34,20 +34,19 @@ def get_bangumi_b():
     results = []
 
     for i in bangumi_obj:
-        if i['weekday'] == now:
-            if i['new'] == True:
-                link = 'http://www.bilibili.tv/sp/' + \
-                    urllib.quote(i['title'].encode('utf-8'))
-                title = i['title']
-                bgmcount = i['bgmcount']
-                update_time = i['lastupdate_at']
-                item = {
-                        'name':title,  \
-                        'index':bgmcount, \
-                        'update_time':update_time ,\
-                        'link':link
-                        }
-                results.append(item)
+        if i['new'] == True:
+            link = 'http://www.bilibili.tv/sp/' + \
+                urllib.quote(i['title'].encode('utf-8'))
+            title = i['title']
+            bgmcount = i['bgmcount']
+            update_time = i['lastupdate_at']
+            item = {
+                    'name':title,  \
+                    'index':bgmcount, \
+                    'update_time':update_time ,\
+                    'link':link
+                    }
+            results.append(item)
     return results
 
 

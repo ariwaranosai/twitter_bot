@@ -43,25 +43,3 @@ def refresh():
     return result
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

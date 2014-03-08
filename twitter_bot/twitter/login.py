@@ -104,7 +104,7 @@ def sendMessage(token, str):
     post = {
             'authenticity_token':token,
             'place_id':'',
-            'status':str
+            'status':unicode(str).encode('utf-8')
             }
 
     request = urllib2.Request(conf.send_url,urllib.urlencode(post))
