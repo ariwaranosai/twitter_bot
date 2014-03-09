@@ -3,6 +3,7 @@
 #FILENAME : __speak.py__ 
 #DESCRIBE:这个文件来完成说话的逻辑
 import logging
+import tools
 
 
 
@@ -17,6 +18,9 @@ def speak(list):
         name = item['name']
         index = item['index']
         update_time = item['update_time']
+        #link = tools.short_url(item['link'])
+        #if link == None:
+        #    link = item['link']
         link = item['link']
 
         logging.log(logging.WARNING, str(type(link)))

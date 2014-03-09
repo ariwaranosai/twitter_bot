@@ -72,7 +72,7 @@ def internal_login(username = user_conf.username, passwd = user_conf.passwd):
             'authenticity_token':authenticity_token,
             'scribe_log':'',
             'redirect_after_login':'',
-            'remember_me':1
+            'remember_me':0
             }
 
     #TODO 伪装成浏览器
