@@ -68,7 +68,7 @@ class Anime(gdb.Model):
         self.real_db.put()
 
 
-    def get_update():
+    def get_update(self):
         if self.real_db == None:
             self.store()
         return self.update_time

@@ -72,7 +72,7 @@ def internal_login(username = user_conf.username, passwd = user_conf.passwd):
             'authenticity_token':authenticity_token,
             'scribe_log':'',
             'redirect_after_login':'',
-            'remember_me':1
+            'remember_me':0
             }
 
     #TODO 伪装成浏览器
@@ -104,7 +104,7 @@ def sendMessage(token, str):
     post = {
             'authenticity_token':token,
             'place_id':'',
-            'status':str
+            'status':unicode(str).encode('utf-8')
             }
 
     request = urllib2.Request(conf.send_url,urllib.urlencode(post))

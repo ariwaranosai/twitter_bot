@@ -1,1 +1,1 @@
-user = 'nksfreedom'
+users = ['nksfreedom']

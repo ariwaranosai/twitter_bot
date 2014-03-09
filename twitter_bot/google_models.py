@@ -9,7 +9,7 @@ import logging
 class Anime(db.Model):
     name = db.StringProperty(required=True)
     index = db.IntegerProperty(required=True)
-    update_time = db.DateProperty(required=True)
+    update_time = db.DateTimeProperty(required=True)
 
 
 class Model():

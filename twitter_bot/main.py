@@ -15,17 +15,30 @@
 # limitations under the License.
 #
 import webapp2
-#import twitter
 import time
 import dbcontroller as dc
+import speak
+import User
+import logging
 
-#测时间
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        dc.refresh()
+        list = dc.refresh()
+        lines = speak.speak(list)
+        import twitter
+        for user in User.users:
+            for i in lines:
+                str1 = i
+                logging.log(logging.WARNING, u"twitter length is " + \
+                        str(len(str1)))
+                try:
+                    twitter.sendMessage(str1)
+                except:
+                    logging.log(logging.WARNING, u"twitter send fail:" + str1)
+
         return self.response.out.write('ok')
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/whyisme', MainHandler)
 ], debug=True)

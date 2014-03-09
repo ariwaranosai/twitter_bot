@@ -1,0 +1,4 @@
+cron:
+- description: every 30 min
+  url: /whyisme
+  schedule: every 30 minutes
