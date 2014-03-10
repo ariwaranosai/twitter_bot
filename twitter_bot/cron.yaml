@@ -1,4 +1,4 @@
 cron:
-- description: every 30 min
+- description: every 15 min
   url: /whyisme
-  schedule: every 30 minutes
+  schedule: every 15 minutes

@@ -5,6 +5,9 @@ import re
 import conf,user_conf
 import logging
 import json
+import sys
+sys.path.insert(0, '../')
+import tools
 
 def init():
     u"""
@@ -75,7 +78,6 @@ def internal_login(username = user_conf.username, passwd = user_conf.passwd):
             'remember_me':0
             }
 
-    #TODO 伪装成浏览器
     request = urllib2.Request(conf.login_url, urllib.urlencode(post))
     login_html = urllib2.urlopen(request).read()
 
@@ -91,7 +93,13 @@ def get_login_token(html):
     if len(l) > 0:
         return l[0]
     else:
-        raise AttributeError
+        try:
+            html = tools.tran2str(html)
+            l = token_re.findall(html)
+            return l
+        except:
+            raise AttributeError
+
 
 def sendMessage(token, str):
     u"""
@@ -119,3 +127,5 @@ def sendMessage(token, str):
             return False
     except:
         return False
+
+
