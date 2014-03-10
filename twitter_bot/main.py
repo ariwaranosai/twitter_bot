@@ -21,7 +21,6 @@ import speak
 import User
 import logging
 
-#TODO 伪装成浏览器   
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
