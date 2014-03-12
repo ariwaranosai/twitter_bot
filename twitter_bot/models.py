@@ -18,7 +18,7 @@ class Anime(gdb.Model):
     def __init__(self, name = None, index = None, update_time = None, thisdb = None):
         self.real_db = thisdb
         self.name = name
-        self.index = index
+        self.index = int(index)
         self.update_time = update_time
 
     @staticmethod
@@ -55,14 +55,14 @@ class Anime(gdb.Model):
             self.store()
         
         if self.real_db == None:
-            ani = gdb.Anime(name = self.name, index = self.index, \
+            ani = gdb.Anime(name = self.name, index = int(self.index), \
                     update_time = self.update_time)
             ani.put()
             return
 
 
         self.real_db.name = self.name
-        self.real_db.index = self.index
+        self.real_db.index = int(self.index)
         self.real_db.update_time = self.update_time
 
         self.real_db.put()
