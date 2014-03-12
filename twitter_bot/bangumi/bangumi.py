@@ -42,7 +42,7 @@ def get_bangumi_b():
             update_time = i['lastupdate_at']
             item = {
                     'name':title,  \
-                    'index':bgmcount, \
+                    'index':int(bgmcount), \
                     'update_time':update_time ,\
                     'link':link
                     }
