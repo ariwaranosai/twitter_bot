@@ -21,7 +21,7 @@ def get_bangumi_b():
     """
     url = 'http://www.bilibili.tv/index/bangumi.json'
 
-    logging.log(logging.WARNING, "start to get b_list")
+    logging.log(logging.INFO, "start to get b_list")
 
     f = urllib2.urlopen(url).read()
     try:

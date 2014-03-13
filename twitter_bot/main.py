@@ -30,7 +30,7 @@ class MainHandler(webapp2.RequestHandler):
         for user in User.users:
             for i in lines:
                 str1 = i
-                logging.log(logging.WARNING, u"twitter length is " + \
+                logging.log(logging.INFO, u"twitter length is " + \
                         str(len(str1)))
                 try:
                     twitter.sendMessage(str1)
